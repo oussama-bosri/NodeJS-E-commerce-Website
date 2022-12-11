@@ -34,8 +34,9 @@ function isProductInCart(cart,id) {
 function calculateTotal(cart,req){
     total = 0;
     for(let i=0; i<cart.legth; i++){
+        // if we're offring a dicounting price
         if(cart[i].sale_price){
-            total = total + (cart[i].sale_price*cart[i*quantity]);
+            total = total + (cart[i].sale_price*cart[i]*quantity);
         }else{
             total = total + (cart[i].pric*cart[i].quantity)
         }
